@@ -9,4 +9,12 @@ def get_bot_info():
     - Return bot's name and username
     - Show verification status
     """
-    pass
+    response = requests.get(f"{BASE_URL}/getMe")
+    data=response.json()
+    use=data['result']
+    h = use["first_name"]
+    usern = use["username"]
+    #massege=updates["username"]
+  #  last=massege[ "username"]
+    print(h,usern)
+get_bot_info()
